@@ -3,7 +3,7 @@
   --color-blue-n2: #91CDEB;
   --color-blue-n3: #4798EB;
   --color-blue-n4: #004B73;
-  --color-green-n1: #00d084;
+  --color-green-n1: #51cc61;
   --color-green-n2: #4ABA58;
   --color-grey: #666666;
 }
@@ -55,9 +55,7 @@ body {
 .container {
   width: 100%;
   display: grid;
-  /* align-items: center; */
-  /* justify-items: center; */
-  /* justify-content: center; */
+  justify-items: center;
   grid-template-rows: .3fr 1fr;
   padding: 3rem;
 }
@@ -66,19 +64,54 @@ body {
 }
 #data-table {
   background: var(--color-blue-n2);
-  
+  font-size: 11pt;
+  border-radius: 1rem;
+  border-spacing: 0;
+  padding-bottom: 0.5rem;
 }
 #data-table th {
+  padding: 0.2rem 2.5rem;
   color: whitesmoke;
   background: var(--color-blue-n4);
   text-align: center;
 }
+#data-table th:first-child {
+  border-radius: 1rem 0 0 0;
+  padding: 0 1rem;
+}
+#data-table th:last-child {
+  border-radius: 0 1rem 0 0;
+  padding: 0 1rem;
+}
 #data-table td {
   text-align: center;
+  padding: .3rem 0;
+  border-bottom: solid 1.5px;
+  /* border: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
+  /* background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent); */
 }
-#tbody tr td a {
+#tbody td a {
   text-decoration: none;
+  color: var(--color-blue-n4);
 }
 #data-table td a img {
   height: 1rem;
+}
+.new-ticket.client-screen {
+  display: flex;
+  justify-content: end;
+}
+.new-ticket.client-screen input {
+  border-style: none;
+  padding: .6rem 3rem;
+  border-radius: .5rem;
+  margin-top: .3rem;
+  background: var(--color-green-n2);
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 11pt;
+}
+.new-ticket.client-screen input:hover {
+  background: var(--color-green-n1);
 }
