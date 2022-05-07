@@ -12,13 +12,14 @@
 </head>
 <body>
   <div class="app">
+  <div class="client-screen">
     <nav class="side-bar">
       <div class="logo-img">
         <a href="#"><img src="./images/logo-aniger.png" alt="logo aniger"></a>
       </div>
       <ul>
-        <li><a href="#"><img src="./images/assets/ticket-solid-blue.png" alt="imagem do tícket"> Tickets</a></li>
-        <li><a href="#"><img src="./images/assets/address-book-regular-blue.png" alt="imagem de contatos"> Contatos</a></li>
+        <li><a href="#"><img src="./images/assets/ticket-solid-blue.png" alt="imagem do tícket" id="img-history-ticket"> Tickets</a></li>
+        <li><a href="#"><img src="./images/assets/address-book-regular-blue.png" alt="imagem de contatos" id="img-contacts"> Contatos</a></li>
       </ul>
     </nav>
 
@@ -63,11 +64,29 @@
         </table>
 
         <div class="new-ticket client-screen">
-          <input type="button" id="novo-ticket" value="Novo Ticket">
+          <input type="button" id="new-ticket-client" value="Novo Ticket">
         </div>
       </div>
-
     </div>
+
+    <div class="new-ticket-screen active">
+      <div class="new-ticket">
+        <div class="new-client-ticekt">
+          <form action="">
+            <input type="text" placeholder="Nome">
+            <input type="text" placeholder="E-mail">
+            <input type="text" placeholder="Ramal">
+            <input type="text" placeholder="Categoria">
+            <input type="text" placeholder="Subcategoria">
+            <input type="text" placeholder="Assunto">
+            <input type="text">
+            <input type="file" name="" id="">
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
   </div>
 </body>
 </html>

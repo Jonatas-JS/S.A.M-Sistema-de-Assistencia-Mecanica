@@ -20,7 +20,7 @@ body {
   width: 100vw;
 }
 
-.app {
+.client-screen {
   display: flex;
 }
 
@@ -40,16 +40,23 @@ body {
 }
 .side-bar ul li a {
   display: flex;
+  align-items: center;
   gap: .4rem;
   text-decoration: none;
   font-weight: bold;
   color: var(--color-blue-n4);
-}
-.side-bar ul li a img {
-  max-height: 1.5rem;
+  font-size: 10pt;
 }
 .side-bar ul {
   list-style: none;
+}
+.side-bar #img-history-ticket {
+  height: 1.5rem;
+  width: 2.5rem;
+}
+.side-bar #img-contacts {
+  height: 2rem;
+  width: 2rem;
 }
 
 .container {
@@ -86,9 +93,7 @@ body {
 #data-table td {
   text-align: center;
   padding: .3rem 0;
-  border-bottom: solid 1.5px;
-  /* border: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); */
-  /* background: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent); */
+  border-bottom: solid rgb(0, 75, 115, .1) 1.5px;
 }
 #tbody td a {
   text-decoration: none;
@@ -114,4 +119,23 @@ body {
 }
 .new-ticket.client-screen input:hover {
   background: var(--color-green-n1);
+}
+
+.new-ticket-screen.active {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(0, 0, 0, .5);
+  backdrop-filter: blur(1px); /*efeito borrado*/
+}
+.new-ticket {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.new-client-ticekt form {
+  display: flex;
+  flex-wrap: wrap;
 }
