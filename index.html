@@ -63,8 +63,8 @@
           </tbody>
         </table>
 
-        <div class="new-ticket client-screen">
-          <input type="button" id="new-ticket-client" value="Novo Ticket">
+        <div class="new-ticket-button client-screen">
+          <input type="button" id="new-ticket-client-button" value="Novo Ticket">
         </div>
       </div>
     </div>
@@ -73,14 +73,36 @@
       <div class="new-ticket">
         <div class="new-client-ticekt">
           <form action="">
-            <input type="text" placeholder="Nome">
+            <h3>Novo Ticket</h3>
+            <p><input type="text" placeholder="Nome">
             <input type="text" placeholder="E-mail">
-            <input type="text" placeholder="Ramal">
-            <input type="text" placeholder="Categoria">
-            <input type="text" placeholder="Subcategoria">
+            <input type="text" placeholder="Ramal"></p>
+            <p><select name="" id="" size="">
+              <option value="">TI - Operações: Equipamento</option>
+              <option value="">TI - Operações: Infraestrutura</option>
+              <option value="">TI - Operações: Projetos</option>
+              <option value="">TI - Operações: Segurança</option>
+              <option value="">TI - Operações: Suporte Técnico</option>
+              <option value="">TI - Operações: Telecomunicações</option>
+              <option value="">TI - Operações: Usuário - Criar/Desativar</option>
+              <option value="">TI - Sistemas: Análise de Processos</option>
+              <option value="">TI - Sistemas: Configurações/Implementações</option>
+              <option value="">TI - Sistemas: Dúvidas</option>
+              <option value="">TI - Sistemas: Erros</option>
+              <option value="">TI - Sistemas: GeradorRelaórios/RotinasEspecias</option>
+              <option value="">TI - Sistemas: Melhorias</option>
+              <option value="">TI - Sistemas: Permissões</option>
+              <option value="">TI - Sistemas: Projetos</option>
+              <option value="">TI - Sistemas: Usuários (Criar/Desativar)</option>
+            </select>
+            <input type="text" placeholder="Subcategoria"></p>
             <input type="text" placeholder="Assunto">
             <input type="text">
-            <input type="file" name="" id="">
+            <input type="file" name="" id="new-ticket-anexo" value="Anexar Arquivo">
+            <div class="buttuns-new-ticket">
+              <input type="button" value="Cancelar">
+              <input type="button" value="Criar">
+            </div>
           </form>
         </div>
       </div>
