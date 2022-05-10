@@ -153,8 +153,8 @@ body {
 
 /*=====================> NOVO TICKET <=====================*/
 .new-client-ticekt {
-  height: 80%;
-  width: 80%;
+  /* height: 80%; */
+  /* width: 80%; */
 
   padding: 1.5rem;
   background: var(--color-blue-n2);
@@ -163,7 +163,7 @@ body {
 .new-client-ticekt form input {
   font-size: 16pt;
   margin-bottom: .5rem;
-  /* width: 100%; */
+  width: 100%;
 
 }
 .new-client-ticekt form p {
