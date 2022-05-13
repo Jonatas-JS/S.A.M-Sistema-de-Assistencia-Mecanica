@@ -64,20 +64,23 @@
         </table>
 
         <div class="new-ticket-button client-screen">
-          <input type="button" id="new-ticket-client-button" value="Novo Ticket">
+          <input type="button" id="new-ticket-client-button" onclick="btnNewTicketClient()" value="Novo Ticket">
         </div>
       </div>
     </div>
 
-    <div class="new-ticket-screen active">
+    <div class="new-ticket-screen">
       <div class="new-ticket">
         <div class="new-client-ticekt">
           <form action="">
             <h3>Novo Ticket</h3>
-            <p><input type="text" placeholder="Nome">
-            <input type="text" placeholder="E-mail">
-            <input type="text" placeholder="Ramal"></p>
-            <p>
+            <div class="info-primary-ticket">
+              <input type="text" id="name-new-ticket" placeholder="Nome">
+              <input type="text" id="email-new-ticket" placeholder="E-mail">
+              <input type="text" id="ramal-new-ticket" placeholder="Ramal">
+            </div>
+            <p>Categoria:</p>
+            <p class="category-subcategory">
             <select>
               <option selected disabled >Categoria</option>
               <option value="">TI - Operações: Equipamento</option>
@@ -99,12 +102,13 @@
             </select>
             <input type="text" placeholder="Subcategoria">
             </p>
-            <input type="text" placeholder="Assunto">
-            <input type="text">
-            <input type="file" name="" id="new-ticket-anexo" value="Anexar Arquivo">
+            <input type="text" id="subject-new-ticket" placeholder="Assunto">
+            <p>Descrição:</p>
+            <textarea name="" id="description" rows="10" maxlength="500"></textarea>
+            <input type="file" id="new-ticket-anexo" name="">
             <div class="buttuns-new-ticket">
-              <input type="button" value="Cancelar">
-              <input type="button" value="Criar">
+              <input type="button" id="btn-cancell-new-ticket" onclick="btnCancelarTicket()" value="Cancelar">
+              <input type="button" id="btn-criate-new-ticket" value="Criar">
             </div>
           </form>
         </div>
@@ -113,5 +117,6 @@
 
   </div>
   </div>
+  <script src="./script.js"></script>
 </body>
 </html>

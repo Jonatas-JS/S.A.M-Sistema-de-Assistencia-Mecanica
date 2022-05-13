@@ -16,8 +16,8 @@ body {
   background: var(--color-blue-n1);
   font-family: 'Poppins', sans-serif;
   color: var(--color-blue-n4);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .client-screen {
@@ -161,21 +161,64 @@ body {
   border-radius: 1rem;
 }
 .new-client-ticekt form input {
-  font-size: 16pt;
+  border-style: none;
+  border-radius: .3rem;
+  font-size: 12pt;
+
   margin-bottom: .5rem;
   width: 100%;
-
+  gap: 1rem;
+  padding: .5rem;
+}
+.info-primary-ticket {
+  display: flex;
+  gap: 1%;
+}
+.category-subcategory {
+  gap: 1%;
+}
+.category-subcategory select {
+  border-style: none;
+  border-radius: .3rem;
+  height: 2.3rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12pt;
+  /* color: #757575; */
 }
 .new-client-ticekt form p {
   display: flex;
   justify-content: space-between;
 }
-.new-client-ticekt form p input {
+.new-client-ticekt #description {
+  resize: none;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11pt;
+  padding: .5rem;
+  border-style: none;
+  border-radius: .3rem;
 }
 .buttuns-new-ticket {
   display: flex;
-  /* gap: 50%; */
+  gap: 50%;
 }
-.buttuns-new-ticket input {
-
+#btn-cancell-new-ticket,
+#btn-criate-new-ticket {
+  color: whitesmoke;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  width: 10rem;
+}
+#btn-cancell-new-ticket {
+  background: rgb(180, 0, 0);
+}
+#btn-criate-new-ticket {
+  background: var(--color-green-n2);
+}
+#btn-cancell-new-ticket:hover {
+  background: rgb(228, 0, 0);
+}
+#btn-criate-new-ticket:hover {
+  background: var(--color-green-n1);
 }
