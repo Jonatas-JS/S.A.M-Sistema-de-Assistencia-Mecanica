@@ -189,7 +189,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.new-client-ticekt #description {
+.new-client-ticekt #description-new-ticket {
   resize: none;
   width: 100%;
   font-family: 'Poppins', sans-serif;

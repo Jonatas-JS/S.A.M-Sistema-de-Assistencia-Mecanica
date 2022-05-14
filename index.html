@@ -63,6 +63,7 @@
           </tbody>
         </table>
 
+
         <div class="new-ticket-button client-screen">
           <input type="button" id="new-ticket-client-button" onclick="btnNewTicketClient()" value="Novo Ticket">
         </div>
@@ -81,7 +82,7 @@
             </div>
             <p>Categoria:</p>
             <p class="category-subcategory">
-            <select>
+            <select id="category-new-ticket">
               <option selected disabled >Categoria</option>
               <option value="">TI - Operações: Equipamento</option>
               <option value="">TI - Operações: Infraestrutura</option>
@@ -100,15 +101,15 @@
               <option value="">TI - Sistemas: Projetos</option>
               <option value="">TI - Sistemas: Usuários (Criar/Desativar)</option>
             </select>
-            <input type="text" placeholder="Subcategoria">
+            <input type="text" id="subcategory-new-ticket" placeholder="Subcategoria">
             </p>
             <input type="text" id="subject-new-ticket" placeholder="Assunto">
             <p>Descrição:</p>
-            <textarea name="" id="description" rows="10" maxlength="500"></textarea>
+            <textarea name="" id="description-new-ticket" rows="10" maxlength="500"></textarea>
             <input type="file" id="new-ticket-anexo" name="">
             <div class="buttuns-new-ticket">
               <input type="button" id="btn-cancell-new-ticket" onclick="btnCancelarTicket()" value="Cancelar">
-              <input type="button" id="btn-criate-new-ticket" value="Criar">
+              <input type="button" id="btn-criate-new-ticket" onclick="btnCriarTicket()" value="Criar">
             </div>
           </form>
         </div>
