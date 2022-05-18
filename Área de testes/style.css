@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: whitesmoke;
+  background: #242424;
+}
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  padding: 1rem;
+}
