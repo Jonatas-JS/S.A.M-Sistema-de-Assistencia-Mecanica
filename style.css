@@ -34,6 +34,14 @@ body {
 }
 .side-bar .logo-img img {
   max-height: 1.7rem;
+  margin-right: .3rem;
+}
+.side-bar .logo-img a {
+  color: var(--color-blue-n4);
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 20pt;
 }
 .side-bar ul li {
   padding: .8rem 0;
@@ -90,6 +98,10 @@ body {
 #data-table th:last-child {
   border-radius: 0 1rem 0 0;
   padding: 0 1rem;
+}
+#data-table th:nth-child(3),
+#data-table th:nth-child(4) {
+  width: .5rem;
 }
 #data-table td {
   text-align: center;
@@ -154,7 +166,7 @@ body {
 /*=====================> NOVO TICKET <=====================*/
 .new-client-ticekt {
   /* height: 80%; */
-  /* width: 80%; */
+  width: 70%;
 
   padding: 1.5rem;
   background: var(--color-blue-n2);
@@ -178,6 +190,8 @@ body {
   gap: 1%;
 }
 .category-subcategory select {
+  width: 100%;
+  margin-bottom: .5rem;
   border-style: none;
   border-radius: .3rem;
   height: 2.3rem;
@@ -200,7 +214,9 @@ body {
 }
 .buttuns-new-ticket {
   display: flex;
-  gap: 50%;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 .5rem;
 }
 #btn-cancell-new-ticket,
 #btn-criate-new-ticket {

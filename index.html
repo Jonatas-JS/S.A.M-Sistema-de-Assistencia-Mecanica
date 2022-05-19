@@ -15,7 +15,7 @@
   <div class="client-screen">
     <nav class="side-bar">
       <div class="logo-img">
-        <a href="#"><img src="./images/logo-aniger.png" alt="logo aniger"></a>
+        <a href="#"><img src="./images/assets/logo-sam-blue.png" alt="logo aniger">SAM</a>
       </div>
       <ul>
         <li><a href="#"><img src="./images/assets/ticket-solid-blue.png" alt="imagem do tícket" id="img-history-ticket"> Tickets</a></li>
@@ -25,7 +25,7 @@
 
     <div class="container">
       <div class="top-bar">
-        <h1></h1>
+        <h1>SISTEMA DE ASSISTÊNCIA MECÂNICA</h1>
       </div>
       <div class="table-tickets">
         <table id="data-table">
@@ -76,32 +76,17 @@
           <form action="">
             <h3>Novo Ticket</h3>
             <div class="info-primary-ticket">
-              <input type="text" id="name-new-ticket" placeholder="Nome">
-              <input type="text" id="email-new-ticket" placeholder="E-mail">
-              <input type="text" id="ramal-new-ticket" placeholder="Ramal">
+              <input type="text" id="name-new-ticket" placeholder="Nome*">
+              <input type="text" id="email-new-ticket" placeholder="E-mail*">
+              <input type="text" id="ramal-new-ticket" placeholder="Ramal*">
             </div>
-            <p>Categoria:</p>
             <p class="category-subcategory">
-            <select id="category-new-ticket">
-              <option selected disabled >Categoria</option>
-              <option value="">TI - Operações: Equipamento</option>
-              <option value="">TI - Operações: Infraestrutura</option>
-              <option value="">TI - Operações: Projetos</option>
-              <option value="">TI - Operações: Segurança</option>
-              <option value="">TI - Operações: Suporte Técnico</option>
-              <option value="">TI - Operações: Telecomunicações</option>
-              <option value="">TI - Operações: Usuário - Criar/Desativar</option>
-              <option value="">TI - Sistemas: Análise de Processos</option>
-              <option value="">TI - Sistemas: Configurações/Implementações</option>
-              <option value="">TI - Sistemas: Dúvidas</option>
-              <option value="">TI - Sistemas: Erros</option>
-              <option value="">TI - Sistemas: GeradorRelaórios/RotinasEspecias</option>
-              <option value="">TI - Sistemas: Melhorias</option>
-              <option value="">TI - Sistemas: Permissões</option>
-              <option value="">TI - Sistemas: Projetos</option>
-              <option value="">TI - Sistemas: Usuários (Criar/Desativar)</option>
+            <select id="category-new-ticket" onchange="selectCat()">
+              <option selected disabled>Categoria</option>
             </select>
-            <input type="text" id="subcategory-new-ticket" placeholder="Subcategoria">
+            <select id="subcategory-new-ticket">
+              <option selected disable>Subcategoria</option>
+            </select>
             </p>
             <input type="text" id="subject-new-ticket" placeholder="Assunto">
             <p>Descrição:</p>
