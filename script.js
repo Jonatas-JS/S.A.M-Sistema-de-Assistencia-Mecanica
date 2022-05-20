@@ -2,6 +2,16 @@ function btnNewTicketClient() {
   document.querySelector('.new-ticket-screen').classList.add('active')
 }
 
+function btnCancelarTicket() {
+  document.querySelector('.new-ticket-screen.active').classList.remove('active')
+
+  document.querySelector('#subject-new-ticket').value = ''
+  document.querySelector('#description-new-ticket').value = ''
+  document.querySelector('#category-new-ticket').value = 'Categoria'
+  document.querySelector('#subcategory-new-ticket').innerHTML = `<option selected disable>Subcategoria</option>`
+  // document.querySelector('#subcategory-new-ticket').value = 'Subcategoria'
+}
+
 let cat = document.querySelector('#category-new-ticket')
 let subCat = document.querySelector('#subcategory-new-ticket')
 
@@ -121,7 +131,7 @@ let categorias = [
   },
   {
     id: 9,
-    cat: 'TI - Sistemas: Configurações/Implementações',
+    cat: 'TI - Sistemas: Configurações / Implementações',
     subCat: [
       'B2B',
       'B2C-MASTER',
@@ -177,7 +187,7 @@ let categorias = [
   },
   {
     id: 12,
-    cat: 'TI - Sistemas: GeradorRelatórios/RotinasEspeciais',
+    cat: 'TI - Sistemas: GeradorRelatórios / RotinasEspeciais',
     subCat: [
       'B2C-MASTER',
       'B2C-SERVER',
@@ -288,11 +298,11 @@ function selectCat() {
         subCat.innerHTML += `<option>${categorias[2].subCat[cont]}</option>`
       }
       break
-      case 'TI - Operações: Segurança':
-        for (let cont = 0; cont < categorias[3].subCat.length; cont++) {
-          subCat.innerHTML += `<option>${categorias[3].subCat[cont]}</option>`
-        }
-        break
+    case 'TI - Operações: Segurança':
+      for (let cont = 0; cont < categorias[3].subCat.length; cont++) {
+        subCat.innerHTML += `<option>${categorias[3].subCat[cont]}</option>`
+      }
+      break
     case 'TI - Operações: Suporte Técnico':
       for (let cont = 0; cont < categorias[4].subCat.length; cont++) {
         subCat.innerHTML += `<option>${categorias[4].subCat[cont]}</option>`
@@ -313,7 +323,7 @@ function selectCat() {
         subCat.innerHTML += `<option>${categorias[7].subCat[cont]}</option>`
       }
       break
-    case 'TI - Sistemas: Configurações/Implementações':
+    case 'TI - Sistemas: Configurações / Implementações':
       for (let cont = 0; cont < categorias[8].subCat.length; cont++) {
         subCat.innerHTML += `<option>${categorias[8].subCat[cont]}</option>`
       }
@@ -328,7 +338,7 @@ function selectCat() {
         subCat.innerHTML += `<option>${categorias[10].subCat[cont]}</option>`
       }
       break
-    case 'TI - Sistemas: GeradorRelatórios/RotinasEspeciais':
+    case 'TI - Sistemas: GeradorRelatórios / RotinasEspeciais':
       for (let cont = 0; cont < categorias[11].subCat.length; cont++) {
         subCat.innerHTML += `<option>${categorias[11].subCat[cont]}</option>`
       }
@@ -356,32 +366,12 @@ function selectCat() {
   }
 }
 
-//====================================================
-function btnCancelarTicket() {
-  document.querySelector('.new-ticket-screen.active').classList.remove('active')
-}
+
 let ticket = [
-  {
-    ticketId: '3030',
-    nome: '',
-    eMail: '',
-    ramal: '',
-    categoria: '',
-    subcategoria: '',
-    assunto: '',
-    descrição: '',
-    prioridade: 'baixa',
-    assunto: 'Impressora com defeito',
-    categoria: 'Impressoras / Erro',
-    status: 'A fazer',
-    tecnico: 'Diherllys Leal',
-    dtCriacao: '13/05/2022'
-  }
 ]
 
 function btnCriarTicket() {
-  let relogio = new Date()
-  let ticketId = ticket.length+1
+  let ticketId = ticket.length + 1
   let nome = document.querySelector('#name-new-ticket').value
   let eMail = document.querySelector('#email-new-ticket').value
   let ramal = document.querySelector('#ramal-new-ticket').value
@@ -392,27 +382,31 @@ function btnCriarTicket() {
   let prioridade = 'baixa'
   let status = 'A fazer'
   let tecnico = ''
-  let dtCriacao = relogio.getDate()
 
-  let infNewTicket = ticket.push({ticketId: `${ticketId}`, nome: `${nome}`, eMail: `${eMail}`, ramal: `${ramal}`, categoria: `${categoria}`, subcategoria: `${subcategoria}`, assunto: `${assunto}`, descricao: `${descricao}`, prioridade: `${prioridade}`, status: `${status}`, tecnico: `${tecnico}`, dtCriacao: `${dtCriacao}`})
-  console.log(ticket.length)
+  let relogio = new Date()
+  let diaAtual = String(relogio.getDate()).padStart(2, '0')
+  let mesAtual = String(relogio.getMonth() + 1).padStart(2, '0')
+  let anoAtual = relogio.getFullYear()
+  let dataAtual = `${diaAtual}/${mesAtual}/${anoAtual}`
+
+  let infNewTicket = ticket.push({ ticketId: `${ticketId}`, nome: `${nome}`, eMail: `${eMail}`, ramal: `${ramal}`, categoria: `${categoria}`, subcategoria: `${subcategoria}`, assunto: `${assunto}`, descricao: `${descricao}`, prioridade: `${prioridade}`, status: `${status}`, tecnico: `${tecnico}`, dtCriacao: `${dataAtual}` })
 
   let criateTr = document.querySelector('#tbody')
   if (document.querySelector('#name-new-ticket').value == 0) {
     alert('[ERRO] Preencha todos os campos')
   } else {
-      criateTr.innerHTML += `
+    criateTr.innerHTML += `
       <tr>
-      <td><a href="#">[${ticket.length-1}]</a></td>
-      <td>${ticket[ticket.length-1].prioridade}</td>
-      <td>${ticket[ticket.length-1].assunto}</td>
-      <td>${ticket[ticket.length-1].categoria}</td>
-      <td>${ticket[ticket.length-1].status}</td>
-      <td>${ticket[ticket.length-1].tecnico}</td>
-      <td>${ticket[ticket.length-1].dtCriacao}</td>
+      <td><a href="#">[${String(ticket.length - 1).padStart(5, '0')}]</a></td>
+      <td>${ticket[ticket.length - 1].prioridade}</td>
+      <td>${ticket[ticket.length - 1].categoria}</td>
+      <td>${ticket[ticket.length - 1].subcategoria}</td>
+      <td>${ticket[ticket.length - 1].status}</td>
+      <td>${ticket[ticket.length - 1].tecnico}</td>
+      <td>${ticket[ticket.length - 1].dtCriacao}</td>
       <td><a href="#"><img src="./images/assets/eye-solid-blue.png" alt="botão visualizar"></a></td>
       </tr>
       `
-      btnCancelarTicket()
+    btnCancelarTicket()
   }
 }
