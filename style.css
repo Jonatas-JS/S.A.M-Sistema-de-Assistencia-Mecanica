@@ -117,7 +117,7 @@ body {
   height: 1rem;
 }
 .table {
-  max-height: 80vh;
+  max-height: 50vh;
   overflow: auto;
 }
 .table::-webkit-scrollbar {

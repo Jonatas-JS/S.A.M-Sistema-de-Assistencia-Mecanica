@@ -381,7 +381,7 @@ function btnCriarTicket() {
   let descricao = document.querySelector('#description-new-ticket').value
   let prioridade = 'baixa'
   let status = 'A fazer'
-  let tecnico = ''
+  let tecnico = '-'
 
   let relogio = new Date()
   let diaAtual = String(relogio.getDate()).padStart(2, '0')
