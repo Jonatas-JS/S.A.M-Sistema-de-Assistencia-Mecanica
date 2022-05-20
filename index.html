@@ -38,7 +38,7 @@
               <th>Status</th>
               <th>Técnico</th>
               <th>Criação</th>
-              <th>Visualisar</th>
+              <th>Visualizar</th>
             </thead>
             <tbody id="tbody">
   
@@ -48,6 +48,19 @@
 
         <div class="new-ticket-button client-screen">
           <input type="button" id="new-ticket-client-button" onclick="btnNewTicketClient()" value="Novo Ticket">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-visualizar-detalhes">
+      <div class="modal-detalhes">
+        <h3 id="fechar-detalhes" onclick="fecharDetalhes()"><a href="#">X</a></h3>
+        <h2 id="nTicket-detalhes"></h2>
+        <div class="table-detalhes-ticket">
+          <table id="table-detalhes">
+            <tbody id="tbody-detalhes">
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
@@ -72,7 +85,7 @@
             </p>
             <input type="text" id="subject-new-ticket" placeholder="Assunto">
             <p>Descrição:</p>
-            <textarea name="" id="description-new-ticket" rows="10" maxlength="500"></textarea>
+            <textarea name="" id="description-new-ticket" rows="10" maxlength="3500"></textarea>
             <input type="file" id="new-ticket-anexo" name="">
             <div class="buttuns-new-ticket">
               <input type="button" id="btn-cancell-new-ticket" onclick="btnCancelarTicket()" value="Cancelar">
@@ -82,7 +95,7 @@
         </div>
       </div>
     </div>
-
+    
   </div>
   </div>
   <script src="./script.js"></script>

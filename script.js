@@ -371,7 +371,7 @@ let ticket = [
 ]
 
 function btnCriarTicket() {
-  let ticketId = ticket.length + 1
+  let ticketId = String(ticket.length).padStart(5, '0')
   let nome = document.querySelector('#name-new-ticket').value
   let eMail = document.querySelector('#email-new-ticket').value
   let ramal = document.querySelector('#ramal-new-ticket').value
@@ -388,25 +388,143 @@ function btnCriarTicket() {
   let mesAtual = String(relogio.getMonth() + 1).padStart(2, '0')
   let anoAtual = relogio.getFullYear()
   let dataAtual = `${diaAtual}/${mesAtual}/${anoAtual}`
+  let horaAtual = String(relogio.getHours()).padStart(2, '0')
+  let minutoAtual = String(relogio.getMinutes()).padStart(2, '0')
+  let horaCriacao = `${horaAtual}:${minutoAtual}`
 
-  let infNewTicket = ticket.push({ ticketId: `${ticketId}`, nome: `${nome}`, eMail: `${eMail}`, ramal: `${ramal}`, categoria: `${categoria}`, subcategoria: `${subcategoria}`, assunto: `${assunto}`, descricao: `${descricao}`, prioridade: `${prioridade}`, status: `${status}`, tecnico: `${tecnico}`, dtCriacao: `${dataAtual}` })
-
-  let criateTr = document.querySelector('#tbody')
+  let infNewTicket = ticket.push({ticketId: `${ticketId}`, nome: `${nome}`, eMail: `${eMail}`, ramal: `${ramal}`, categoria: `${categoria}`, subcategoria: `${subcategoria}`, assunto: `${assunto}`, descricao: `${descricao}`, prioridade: `${prioridade}`, status: `${status}`, tecnico: `${tecnico}`, dtCriacao: `${dataAtual}`, horaCriacao: `${horaCriacao}` })
+  let tableResul = document.querySelector('#tbody')
+    console.log(ticket)
+  let criateTr = ''
+  // let criateTr = document.querySelector('#tbody')
   if (document.querySelector('#name-new-ticket').value == 0) {
     alert('[ERRO] Preencha todos os campos')
   } else {
-    criateTr.innerHTML += `
+    for (let i = 0; i < ticket.length; i++) {
+      let cont = i + 1
+      criateTr += `
       <tr>
-      <td><a href="#">[${String(ticket.length - 1).padStart(5, '0')}]</a></td>
-      <td>${ticket[ticket.length - 1].prioridade}</td>
-      <td>${ticket[ticket.length - 1].categoria}</td>
-      <td>${ticket[ticket.length - 1].subcategoria}</td>
-      <td>${ticket[ticket.length - 1].status}</td>
-      <td>${ticket[ticket.length - 1].tecnico}</td>
-      <td>${ticket[ticket.length - 1].dtCriacao}</td>
-      <td><a href="#"><img src="./images/assets/eye-solid-blue.png" alt="botão visualizar"></a></td>
+      <td><a href="#" class="detalhes-chamado">[${ticket[ticket.length - cont].ticketId}]</a></td>
+      <td>${ticket[ticket.length - cont].prioridade}</td>
+      <td>${ticket[ticket.length - cont].categoria}</td>
+      <td>${ticket[ticket.length - cont].subcategoria}</td>
+      <td>${ticket[ticket.length - cont].status}</td>
+      <td>${ticket[ticket.length - cont].tecnico}</td>
+      <td>${ticket[ticket.length - cont].dtCriacao}</td>
+      <td><a href="#" class="abrir-detalhes"><img src="./images/assets/eye-solid-blue.png" alt="botão visualizar"></a></td>
       </tr>
       `
+    }
+    tableResul.innerHTML = `${criateTr}`
     btnCancelarTicket()
   }
+  let detalhes = document.querySelectorAll('.abrir-detalhes')
+  let chamado = document.querySelectorAll('.detalhes-chamado')
+  for (let i = 0; i < detalhes.length; i++) {
+    chamado[i].addEventListener("click", function (e) {
+      let cont = i + 1
+      let item = ticket.length - cont
+      document.querySelector('.modal-visualizar-detalhes').classList.add('active')
+      document.getElementById('nTicket-detalhes').innerHTML = `Ticket #${ticket[item].ticketId}`
+      document.getElementById('tbody-detalhes').innerHTML = `
+    <tr>
+    <th scope="row">Nome:</th>
+    <td>${ticket[item].nome}</td>
+    </tr>
+    <tr>
+    <th scope="row">E-mail:</th>
+    <td>${ticket[item].eMail}</td>
+    </tr>
+    <tr>
+    <th scope="row">Ramal:</th>
+    <td>${ticket[item].ramal}</td>
+    </tr>
+    <tr>
+    <th scope="row">Categoria:</th>
+    <td>${ticket[item].categoria}</td>
+    </tr>
+    <tr>
+    <th scope="row">Subcategoria:</th>
+    <td>${ticket[item].subcategoria}</td>
+    </tr>
+    <tr>
+    <th scope="row">Assunto:</th>
+    <td>${ticket[item].assunto}</td>
+    </tr>
+    <tr>
+    <th scope="row">Descrição:</th>
+    <td>${ticket[item].descricao}</td>
+    </tr>
+    <tr>
+    <th scope="row">Prioridade:</th>
+    <td>${ticket[item].prioridade}</td>
+    </tr>
+    <tr>
+    <th scope="row">Status:</th>
+    <td>${ticket[item].status}</td>
+    </tr>
+    <tr>
+    <th scope="row">Técnico:</th>
+    <td>${ticket[item].tecnico}</td>
+    </tr>
+    <tr>
+    <th scope="row">Data:</th>
+    <td>${ticket[item].dtCriacao} ${ticket[ticket.length - cont].horaCriacao}</td>
+    </tr>`
+    })
+    detalhes[i].addEventListener("click", function (e) {
+      let cont = i + 1
+      let item = ticket.length - cont
+      document.querySelector('.modal-visualizar-detalhes').classList.add('active')
+      document.getElementById('nTicket-detalhes').innerHTML = `Ticket #${ticket[item].ticketId}`
+      document.getElementById('tbody-detalhes').innerHTML = `
+    <tr>
+    <th scope="row">Nome:</th>
+    <td>${ticket[item].nome}</td>
+    </tr>
+    <tr>
+    <th scope="row">E-mail:</th>
+    <td>${ticket[item].eMail}</td>
+    </tr>
+    <tr>
+    <th scope="row">Ramal:</th>
+    <td>${ticket[item].ramal}</td>
+    </tr>
+    <tr>
+    <th scope="row">Categoria:</th>
+    <td>${ticket[item].categoria}</td>
+    </tr>
+    <tr>
+    <th scope="row">Subcategoria:</th>
+    <td>${ticket[item].subcategoria}</td>
+    </tr>
+    <tr>
+    <th scope="row">Assunto:</th>
+    <td>${ticket[item].assunto}</td>
+    </tr>
+    <tr>
+    <th scope="row">Descrição:</th>
+    <td>${ticket[item].descricao}</td>
+    </tr>
+    <tr>
+    <th scope="row">Prioridade:</th>
+    <td>${ticket[item].prioridade}</td>
+    </tr>
+    <tr>
+    <th scope="row">Status:</th>
+    <td>${ticket[item].status}</td>
+    </tr>
+    <tr>
+    <th scope="row">Técnico:</th>
+    <td>${ticket[item].tecnico}</td>
+    </tr>
+    <tr>
+    <th scope="row">Data:</th>
+    <td>${ticket[item].dtCriacao} ${ticket[ticket.length - cont].horaCriacao}</td>
+    </tr>`
+    })
+  }
+}
+function fecharDetalhes() {
+  document.querySelector('.modal-visualizar-detalhes.active').classList.remove('active')
 }
