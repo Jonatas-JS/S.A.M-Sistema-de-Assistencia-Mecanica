@@ -185,8 +185,9 @@ body {
 #fechar-detalhes {
   background: var(--color-green-n1);
   border-radius: .5rem .5rem 0 0;
-  padding: .3rem 1rem;
-  text-align: end;
+  padding: .3rem 1rem 0 1rem;
+  text-align: right;
+  height: .8rem;
 }
 #fechar-detalhes a {
   text-decoration: none;

@@ -7,9 +7,8 @@ function btnCancelarTicket() {
 
   document.querySelector('#subject-new-ticket').value = ''
   document.querySelector('#description-new-ticket').value = ''
-  document.querySelector('#category-new-ticket').value = 'Categoria'
-  document.querySelector('#subcategory-new-ticket').innerHTML = `<option selected disable>Subcategoria</option>`
-  // document.querySelector('#subcategory-new-ticket').value = 'Subcategoria'
+  document.querySelector('#category-new-ticket').value = 'Categoria*'
+  document.querySelector('#subcategory-new-ticket').innerHTML = `<option selected disable>Subcategoria*</option>`
 }
 
 let cat = document.querySelector('#category-new-ticket')
@@ -280,7 +279,7 @@ for (let cont = 0; cont < categorias.length; cont++) {
 function selectCat() {
   let optionValue = cat.options[cat.selectedIndex].value
   subCat.innerHTML = `<select id="subcategory-new-ticket">
-  <option value="subcategoria" selected disabled>Subcategoria</option>
+  <option value="subcategoria" selected disabled>Subcategoria*</option>
 </select>`
   switch (optionValue) {
     case 'TI - Operações: Equipamentos':
@@ -366,7 +365,6 @@ function selectCat() {
   }
 }
 
-
 let ticket = [
 ]
 
@@ -392,14 +390,15 @@ function btnCriarTicket() {
   let minutoAtual = String(relogio.getMinutes()).padStart(2, '0')
   let horaCriacao = `${horaAtual}:${minutoAtual}`
 
-  let infNewTicket = ticket.push({ticketId: `${ticketId}`, nome: `${nome}`, eMail: `${eMail}`, ramal: `${ramal}`, categoria: `${categoria}`, subcategoria: `${subcategoria}`, assunto: `${assunto}`, descricao: `${descricao}`, prioridade: `${prioridade}`, status: `${status}`, tecnico: `${tecnico}`, dtCriacao: `${dataAtual}`, horaCriacao: `${horaCriacao}` })
   let tableResul = document.querySelector('#tbody')
-    console.log(ticket)
+
   let criateTr = ''
-  // let criateTr = document.querySelector('#tbody')
-  if (document.querySelector('#name-new-ticket').value == 0) {
+
+  if (nome == '' || eMail == '' || ramal == '' || categoria == 'Categoria*' || subcategoria == 'Subcategoria*' || assunto == '') {
     alert('[ERRO] Preencha todos os campos')
   } else {
+  let infNewTicket = ticket.push({ticketId: `${ticketId}`, nome: `${nome}`, eMail: `${eMail}`, ramal: `${ramal}`, categoria: `${categoria}`, subcategoria: `${subcategoria}`, assunto: `${assunto}`, descricao: `${descricao}`, prioridade: `${prioridade}`, status: `${status}`, tecnico: `${tecnico}`, dtCriacao: `${dataAtual}`, horaCriacao: `${horaCriacao}` })
+
     for (let i = 0; i < ticket.length; i++) {
       let cont = i + 1
       criateTr += `
