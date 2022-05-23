@@ -1,3 +1,30 @@
+function darkMod() {
+  let checkbox = document.getElementById('checkbox')
+  if (checkbox.checked) {
+    document.querySelector('.body').classList.add('darkMod')
+    document.querySelector('.side-bar').classList.add('darkMod')
+    document.querySelector('#data-table').classList.add('darkMod')
+    document.querySelector('#tbody').classList.add('darkMod')
+    document.querySelector('#fechar-detalhes').classList.add('darkMod')
+    document.querySelector('.table-detalhes-ticket').classList.add('darkMod')
+    document.querySelector('#tbody-detalhes').classList.add('darkMod')
+    document.querySelector('.new-client-ticekt').classList.add('darkMod')
+    document.querySelector('.img-history-ticket').innerHTML = `<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M128 160H448V352H128V160zM512 64C547.3 64 576 92.65 576 128V208C549.5 208 528 229.5 528 256C528 282.5 549.5 304 576 304V384C576 419.3 547.3 448 512 448H64C28.65 448 0 419.3 0 384V304C26.51 304 48 282.5 48 256C48 229.5 26.51 208 0 208V128C0 92.65 28.65 64 64 64H512zM96 352C96 369.7 110.3 384 128 384H448C465.7 384 480 369.7 480 352V160C480 142.3 465.7 128 448 128H128C110.3 128 96 142.3 96 160V352z" fill="rgb(245, 245, 245)" id="img-history-ticket"/></svg>Tickets</a>`
+    document.querySelector('.img-contacts').innerHTML = `<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M384 0H96C60.65 0 32 28.65 32 64v384c0 35.35 28.65 64 64 64h288c35.35 0 64-28.65 64-64V64C448 28.65 419.3 0 384 0zM240 128c35.35 0 64 28.65 64 64s-28.65 64-64 64c-35.34 0-64-28.65-64-64S204.7 128 240 128zM336 384h-192C135.2 384 128 376.8 128 368C128 323.8 163.8 288 208 288h64c44.18 0 80 35.82 80 80C352 376.8 344.8 384 336 384zM496 64H480v96h16C504.8 160 512 152.8 512 144v-64C512 71.16 504.8 64 496 64zM496 192H480v96h16C504.8 288 512 280.8 512 272v-64C512 199.2 504.8 192 496 192zM496 320H480v96h16c8.836 0 16-7.164 16-16v-64C512 327.2 504.8 320 496 320z" fill="rgb(245, 245, 245)" id="img-contacts"/></svg>Contatos</a>`
+  } else {
+    document.querySelector('.body.darkMod').classList.remove('darkMod')
+    document.querySelector('.side-bar.darkMod').classList.remove('darkMod')
+    document.querySelector('#data-table.darkMod').classList.remove('darkMod')
+    document.querySelector('#tbody.darkMod').classList.remove('darkMod')
+    document.querySelector('#fechar-detalhes.darkMod').classList.remove('darkMod')
+    document.querySelector('.table-detalhes-ticket.darkMod').classList.remove('darkMod')
+    document.querySelector('#tbody-detalhes.darkMod').classList.remove('darkMod')
+    document.querySelector('.new-client-ticekt.darkMod').classList.remove('darkMod')
+    document.querySelector('.img-history-ticket').innerHTML = `<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M128 160H448V352H128V160zM512 64C547.3 64 576 92.65 576 128V208C549.5 208 528 229.5 528 256C528 282.5 549.5 304 576 304V384C576 419.3 547.3 448 512 448H64C28.65 448 0 419.3 0 384V304C26.51 304 48 282.5 48 256C48 229.5 26.51 208 0 208V128C0 92.65 28.65 64 64 64H512zM96 352C96 369.7 110.3 384 128 384H448C465.7 384 480 369.7 480 352V160C480 142.3 465.7 128 448 128H128C110.3 128 96 142.3 96 160V352z" fill="rgb(0, 75, 115)" id="img-history-ticket"/></svg>Tickets</a>`
+    document.querySelector('.img-contacts').innerHTML = `<a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M384 0H96C60.65 0 32 28.65 32 64v384c0 35.35 28.65 64 64 64h288c35.35 0 64-28.65 64-64V64C448 28.65 419.3 0 384 0zM240 128c35.35 0 64 28.65 64 64s-28.65 64-64 64c-35.34 0-64-28.65-64-64S204.7 128 240 128zM336 384h-192C135.2 384 128 376.8 128 368C128 323.8 163.8 288 208 288h64c44.18 0 80 35.82 80 80C352 376.8 344.8 384 336 384zM496 64H480v96h16C504.8 160 512 152.8 512 144v-64C512 71.16 504.8 64 496 64zM496 192H480v96h16C504.8 288 512 280.8 512 272v-64C512 199.2 504.8 192 496 192zM496 320H480v96h16c8.836 0 16-7.164 16-16v-64C512 327.2 504.8 320 496 320z" fill="rgb(0, 75, 115)" id="img-contacts"/></svg>Contatos</a>`
+  
+  }
+}
 function btnNewTicketClient() {
   document.querySelector('.new-ticket-screen').classList.add('active')
 }
