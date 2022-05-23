@@ -37,12 +37,8 @@ body {
   max-width: 30vw;
   height: 100vh;
   display: grid;
-  align-items:flex-start;
+  /* align-items:flex-start; */
   background: var(--color-blue-n2);
-}
-.side-bar .logo-img img {
-  max-height: 1.7rem;
-  margin-right: .3rem;
 }
 .side-bar .logo-img a {
   color: var(--color-blue-n4);
@@ -50,16 +46,25 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   font-size: 20pt;
+  display: flex;
+  align-items: center;
 }
+.side-bar .logo-img a svg {
+  max-height: 1.8rem;
+  margin-right: .2rem;
+  padding-bottom: .2rem;
+}
+
+/*=====================> BOX MODO DARK <=====================*/
 #checkbox {
   display: none;
 }
 .toggler {
   display: block;
-  width: 55px;
-  height: 27px;
-  border: 2px solid var(--color-dark-black-n1);
-  border-radius: 30px;
+  width: 2.6rem;
+  height: 1.2rem;
+  border: 2px solid var(--color-blue-n4);
+  border-radius: 1rem;
   position: relative;
   cursor: pointer;
 }
@@ -72,13 +77,13 @@ body {
 }
 .ball {
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-color: var(--color-blue-n3);
+  width: .8rem;
+  height: .8rem;
+  background-color: var(--color-blue-n4);
   border-radius: 50%;
   left: 1px;
-  z-index: 10;
-  transition: transform .5s ease-in-out;
+  z-index: 3;
+  transition: .5s ease-in-out;
 }
 .sun {
   left: 5px;
@@ -87,20 +92,24 @@ body {
   right: 5px;
 }
 #checkbox:checked + .ball {
-  transform: translate(29px, -50%);
+  transform: translate(1.4rem, -50%);
   background: var(--color-dark-black-n3);
 }
+
 .side-bar ul li {
   padding: .8rem 0;
 }
 .side-bar ul li a {
   display: flex;
   align-items: center;
-  gap: .4rem;
+  gap: .3rem;
   text-decoration: none;
   font-weight: bold;
   color: var(--color-blue-n4);
   font-size: 10pt;
+}
+.side-bar ul li a svg {
+  height: 1.8rem;
 }
 .side-bar ul {
   list-style: none;
@@ -258,6 +267,9 @@ body {
   text-align: left;
   border-bottom: var(--color-blue-n4) solid 1px;
 }
+.abrir-detalhes svg {
+  max-height: 1.1rem;
+}
 
 /*=====================> TELA DE NOVO TICKET <=====================*/
 .new-ticket-screen {
@@ -364,6 +376,9 @@ body {
 }
 
 /*=====================> MODO DARK <=====================*/
+.tema-escuro {
+  font-size: 8pt;
+}
 .body.darkMod {
   background: var(--color-dark-black-n1);
   color: whitesmoke;
@@ -376,6 +391,9 @@ body {
 }
 .side-bar.darkMod ul li a {
   color: whitesmoke;
+}
+.toggler.darkMod {
+  border: 2px solid var(--color-dark-black-n1);
 }
 #data-table.darkMod {
   background: var(--color-dark-black-n2);
