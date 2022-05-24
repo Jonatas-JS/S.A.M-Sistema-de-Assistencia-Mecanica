@@ -54,6 +54,13 @@ body {
   margin-right: .2rem;
   padding-bottom: .2rem;
 }
+.abrir-detalhes-svg,
+.img-history-ticket-svg,
+.img-contacts-svg,
+.logo-svg,
+.img-history-ticket-svg {
+  fill: var(--color-blue-n4);
+}
 
 /*=====================> BOX MODO DARK <=====================*/
 #checkbox {
@@ -269,6 +276,7 @@ body {
 }
 .abrir-detalhes svg {
   max-height: 1.1rem;
+  fill: var(--color-blue-n4);
 }
 
 /*=====================> TELA DE NOVO TICKET <=====================*/
@@ -423,4 +431,11 @@ body {
 }
 .new-client-ticekt.darkMod {
   background: var(--color-dark-black-n2);
+}
+.abrir-detalhes-svg.darkMod,
+.img-history-ticket-svg.darkMod,
+.img-contacts-svg.darkMod,
+.logo-svg.darkMod,
+.img-history-ticket-svg.darkMod {
+  fill: whitesmoke;
 }
