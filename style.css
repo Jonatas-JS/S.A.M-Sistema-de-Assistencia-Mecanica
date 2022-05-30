@@ -432,10 +432,15 @@ body {
 .new-client-ticekt.darkMod {
   background: var(--color-dark-black-n2);
 }
-.abrir-detalhes-svg.darkMod,
-.img-history-ticket-svg.darkMod,
-.img-contacts-svg.darkMod,
-.logo-svg.darkMod,
-.img-history-ticket-svg.darkMod {
-  fill: whitesmoke;
+.svg-icon,
+.logo-svg {
+  fill: var(--color-blue-n4)
+}
+
+.img-history-ticket.darkMod .svg-icon,
+.img-contacts.darkMod .svg-icon{
+  fill: white;
+}
+.logo-svg.darkMod {
+  fill: white;
 }
