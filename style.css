@@ -37,7 +37,6 @@ body {
   max-width: 30vw;
   height: 100vh;
   display: grid;
-  /* align-items:flex-start; */
   background: var(--color-blue-n2);
 }
 .side-bar .logo-img a {
@@ -54,12 +53,9 @@ body {
   margin-right: .2rem;
   padding-bottom: .2rem;
 }
-.abrir-detalhes-svg,
-.img-history-ticket-svg,
-.img-contacts-svg,
-.logo-svg,
-.img-history-ticket-svg {
-  fill: var(--color-blue-n4);
+.svg-icon,
+.logo-svg {
+  fill: var(--color-blue-n4)
 }
 
 /*=====================> BOX MODO DARK <=====================*/
@@ -130,6 +126,9 @@ body {
   width: 2rem;
 }
 
+.tema-escuro {
+  font-size: 8pt;
+}
 /*=====================> TELA DE HITÓRICO DE TICKET <=====================*/
 .container {
   width: 100%;
@@ -137,9 +136,6 @@ body {
   justify-items: center;
   grid-template-rows: .3fr 1fr;
   padding: 3rem;
-}
-.top-bar {
-  text-align: center;
 }
 
 #data-table {
@@ -174,7 +170,7 @@ body {
 #data-table td {
   text-align: center;
   padding: .3rem 0;
-  border-bottom: solid rgb(0, 75, 115, .1) 1.5px;
+  border-bottom:1.5px solid rgb(0, 75, 115, .1);
 }
 #tbody td a {
   text-decoration: none;
@@ -309,7 +305,6 @@ body {
 
 /*=====================> NOVO TICKET <=====================*/
 .new-client-ticekt {
-  /* height: 80%; */
   width: 70%;
 
   padding: 1.5rem;
@@ -341,7 +336,6 @@ body {
   height: 2.3rem;
   font-family: 'Poppins', sans-serif;
   font-size: 12pt;
-  /* color: #757575; */
 }
 .new-client-ticekt form p {
   display: flex;
@@ -384,63 +378,58 @@ body {
 }
 
 /*=====================> MODO DARK <=====================*/
-.tema-escuro {
-  font-size: 8pt;
-}
 .body.darkMod {
   background: var(--color-dark-black-n1);
   color: whitesmoke;
 }
-.side-bar.darkMod {
+.body.darkMod .side-bar {
   background: var(--color-dark-black-n2);
 }
-.side-bar.darkMod .logo-img a {
+.body.darkMod .side-bar .logo-img a {
   color: whitesmoke;
 }
-.side-bar.darkMod ul li a {
+.body.darkMod .side-bar ul li a {
   color: whitesmoke;
 }
-.toggler.darkMod {
+.body.darkMod .toggler {
   border: 2px solid var(--color-dark-black-n1);
 }
-#data-table.darkMod {
+.body.darkMod #data-table {
   background: var(--color-dark-black-n2);
 }
-#data-table.darkMod th {
+.body.darkMod #data-table td {
+  border-bottom: 2px solid rgb(25, 25, 25, .3);
+} 
+.body.darkMod #data-table th {
   color: whitesmoke;
   background: var(--color-dark-black-n4);
 }
-#tbody.darkMod td a {
+.body.darkMod #tbody td a {
   color: whitesmoke;
 }
-.table.darkMod::-webkit-scrollbar-thumb {
+.body.darkMod .table::-webkit-scrollbar-thumb {
+  background-color: var(--color-dark-black-n4);
+}
+.body.darkMod .modal-detalhes::-webkit-scrollbar-thumb {
   background-color: rgb(0, 75, 115, .2);
 }
-.modal-detalhes.darkMod::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 75, 115, .2);
-}
-#fechar-detalhes.darkMod a {
+.body.darkMod #fechar-detalhes a {
   color: var(--color-dark-black-n4);
 }
-.table-detalhes-ticket.darkMod {
+.body.darkMod .table-detalhes-ticket {
   background: var(--color-dark-black-n1);
 }
-#tbody-detalhes.darkMod th,
-#tbody-detalhes.darkMod td {
+.body.darkMod #tbody-detalhes th,
+.body.darkMod #tbody-detalhes td {
   border-bottom: var(--color-dark-black-n4) solid 1px;
 }
-.new-client-ticekt.darkMod {
+.body.darkMod .new-client-ticekt {
   background: var(--color-dark-black-n2);
 }
-.svg-icon,
-.logo-svg {
-  fill: var(--color-blue-n4)
-}
 
-.img-history-ticket.darkMod .svg-icon,
-.img-contacts.darkMod .svg-icon{
-  fill: white;
+.body.darkMod .svg-icon {
+  fill: whitesmoke;
 }
-.logo-svg.darkMod {
-  fill: white;
+.body.darkMod .logo-svg {
+  fill: whitesmoke;
 }

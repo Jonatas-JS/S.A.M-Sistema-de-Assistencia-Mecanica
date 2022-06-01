@@ -2,28 +2,11 @@ function darkMod() {
   let checkbox = document.getElementById('checkbox')
   if (checkbox.checked) {
     document.querySelector('.body').classList.add('darkMod')
-    document.querySelector('.side-bar').classList.add('darkMod')
-    document.querySelector('#data-table').classList.add('darkMod')
-    document.querySelector('#tbody').classList.add('darkMod')
-    document.querySelector('.table-detalhes-ticket').classList.add('darkMod')
-    document.querySelector('#tbody-detalhes').classList.add('darkMod')
-    document.querySelector('.new-client-ticekt').classList.add('darkMod')
-    document.querySelector('.img-history-ticket').classList.add('darkMod')
-    document.querySelector('.img-contacts').classList.add('darkMod')
-    document.querySelector('.logo-svg').classList.add('darkMod')
   } else {
     document.querySelector('.body.darkMod').classList.remove('darkMod')
-    document.querySelector('.side-bar.darkMod').classList.remove('darkMod')
-    document.querySelector('#data-table.darkMod').classList.remove('darkMod')
-    document.querySelector('#tbody.darkMod').classList.remove('darkMod')
-    document.querySelector('.table-detalhes-ticket.darkMod').classList.remove('darkMod')
-    document.querySelector('#tbody-detalhes.darkMod').classList.remove('darkMod')
-    document.querySelector('.new-client-ticekt.darkMod').classList.remove('darkMod')
-    document.querySelector('.img-history-ticket.darkMod').classList.remove('darkMod')
-    document.querySelector('.img-contacts.darkMod').classList.remove('darkMod')
-    document.querySelector('.logo-svg.darkMod').classList.remove('darkMod')
   }
-} // TEM QUE FAZER UM PARA AS LINHAS FICAREM BRANCAS, O ABRIR DETALHES BRANCO E A BORDA DO BTN MODO ESCURO
+}
+
 function btnNewTicketClient() {
   document.querySelector('.new-ticket-screen').classList.add('active')
 }
